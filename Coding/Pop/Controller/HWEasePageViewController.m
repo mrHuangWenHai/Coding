@@ -1,22 +1,21 @@
 //
-//  HWCodingPopViewController.m
+//  HWEasePageViewController.m
 //  Coding
 //
-//  Created by 黄文海 on 2018/3/13.
+//  Created by 黄文海 on 2018/4/7.
 //  Copyright © 2018年 huang. All rights reserved.
 //
 
-#import "HWCodingPopViewController.h"
+#import "HWEasePageViewController.h"
 
-@interface HWCodingPopViewController ()
+@interface HWEasePageViewController ()
 
 @end
 
-@implementation HWCodingPopViewController
+@implementation HWEasePageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

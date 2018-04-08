@@ -53,6 +53,8 @@
 		01770945205C0246002F890F /* UIImage+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 01770944205C0246002F890F /* UIImage+Expanded.m */; };
 		0177094A205CBD03002F890F /* loading_monkey@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01770949205CBD03002F890F /* loading_monkey@2x.gif */; };
 		0177094D205D09A4002F890F /* HWProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0177094C205D09A4002F890F /* HWProjectDetailViewController.m */; };
+		01946D0B20790F9F003D89ED /* HWSwipeBetweenViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 01946D0A20790F9F003D89ED /* HWSwipeBetweenViewControllers.m */; };
+		01946D0E20791005003D89ED /* HWEasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01946D0D20791005003D89ED /* HWEasePageViewController.m */; };
 		72709CD7658958BA66FE6664 /* libPods-Coding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C93B24E53C6C3AECF2931C4E /* libPods-Coding.a */; };
 		EE39CEE818CE29CC44F0F57D /* libPods-CodingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D5231C425613D711A18C78 /* libPods-CodingUITests.a */; };
 		F710EABE96DEC67205C96F1F /* libPods-CodingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6996BB2211874BAB6F44765E /* libPods-CodingTests.a */; };
@@ -116,6 +118,7 @@
 		012D8550205D52250065D796 /* HWProjectDescriptionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWProjectDescriptionCell.m; sourceTree = "<group>"; };
 		012D8590205FDCA50065D796 /* HWFilterHander.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWFilterHander.h; sourceTree = "<group>"; };
 		012D8591205FDCA50065D796 /* HWFilterHander.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWFilterHander.m; sourceTree = "<group>"; };
+		015F554D207A133D00B1DB35 /* PopHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopHeader.h; sourceTree = "<group>"; };
 		017702512054B951002F890F /* Coding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		017702542054B951002F890F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		017702552054B951002F890F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -164,6 +167,10 @@
 		01770949205CBD03002F890F /* loading_monkey@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading_monkey@2x.gif"; sourceTree = "<group>"; };
 		0177094B205D09A4002F890F /* HWProjectDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWProjectDetailViewController.h; sourceTree = "<group>"; };
 		0177094C205D09A4002F890F /* HWProjectDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWProjectDetailViewController.m; sourceTree = "<group>"; };
+		01946D0920790F9F003D89ED /* HWSwipeBetweenViewControllers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWSwipeBetweenViewControllers.h; sourceTree = "<group>"; };
+		01946D0A20790F9F003D89ED /* HWSwipeBetweenViewControllers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWSwipeBetweenViewControllers.m; sourceTree = "<group>"; };
+		01946D0C20791005003D89ED /* HWEasePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWEasePageViewController.h; sourceTree = "<group>"; };
+		01946D0D20791005003D89ED /* HWEasePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWEasePageViewController.m; sourceTree = "<group>"; };
 		0685E4A9004176E16EE325B0 /* Pods-CodingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodingUITests/Pods-CodingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		598190F35D9422C236F8A5CB /* Pods-CodingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodingUITests/Pods-CodingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6996BB2211874BAB6F44765E /* libPods-CodingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,8 +400,10 @@
 		0177029E20580C86002F890F /* Pop */ = {
 			isa = PBXGroup;
 			children = (
+				01946D0820790F63003D89ED /* Controller */,
 				0177029F20580CAB002F890F /* HWCodingPopViewController.h */,
 				017702A020580CAB002F890F /* HWCodingPopViewController.m */,
+				015F554D207A133D00B1DB35 /* PopHeader.h */,
 			);
 			path = Pop;
 			sourceTree = "<group>";
@@ -470,6 +479,17 @@
 				01770949205CBD03002F890F /* loading_monkey@2x.gif */,
 			);
 			path = Gif;
+			sourceTree = "<group>";
+		};
+		01946D0820790F63003D89ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01946D0920790F9F003D89ED /* HWSwipeBetweenViewControllers.h */,
+				01946D0A20790F9F003D89ED /* HWSwipeBetweenViewControllers.m */,
+				01946D0C20791005003D89ED /* HWEasePageViewController.h */,
+				01946D0D20791005003D89ED /* HWEasePageViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7E6CDF58D3290823145DF89A /* Frameworks */ = {
@@ -793,6 +813,7 @@
 				0119CA0E206DEFA500D88B5B /* HWTextCell.m in Sources */,
 				0119CA0A206DCCBD00D88B5B /* HWAddTaskDescription.m in Sources */,
 				01770925205949FD002F890F /* UIColor+Expanded.m in Sources */,
+				01946D0B20790F9F003D89ED /* HWSwipeBetweenViewControllers.m in Sources */,
 				0177029D20580BBE002F890F /* HWCodingTabBarController.m in Sources */,
 				0119C9ED20693B9A00D88B5B /* HWTaskCell.m in Sources */,
 				017702562054B951002F890F /* AppDelegate.m in Sources */,
@@ -813,6 +834,7 @@
 				017702892054C136002F890F /* Login.m in Sources */,
 				0177093C205AB92B002F890F /* HWProjectModel.m in Sources */,
 				0119C9FC206BE7B000D88B5B /* NSDate+Common.m in Sources */,
+				01946D0E20791005003D89ED /* HWEasePageViewController.m in Sources */,
 				0119C9F9206A8FCC00D88B5B /* HWTaskModel.m in Sources */,
 				017702A520580DC5002F890F /* HWCodingMessageViewController.m in Sources */,
 			);

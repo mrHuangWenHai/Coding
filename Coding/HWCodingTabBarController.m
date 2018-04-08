@@ -13,6 +13,7 @@
 #import "HWCodingMessageViewController.h"
 #import "HWCodingMeViewController.h"
 #import "HWCodingNavigationController.h"
+#import "HWSwipeBetweenViewControllers.h"
 
 @interface HWCodingTabBarController ()
 
@@ -66,8 +67,11 @@
     UITabBarItem* popItem = [[UITabBarItem alloc] initWithTitle:tabBarItemTitles[2]
                                                           image:popUnselectImage
                                                   selectedImage:popSelectImage];
-    pop.tabBarItem = popItem;
-    HWCodingNavigationController* popNav = [[HWCodingNavigationController alloc] initWithRootViewController:pop];
+    
+    HWSwipeBetweenViewControllers* popNav = [HWSwipeBetweenViewControllers newHWSwipeBetweenViewControllers];
+    popNav.tabBarItem = popItem;
+    popNav.viewControllerArray = @[pop];
+    popNav.buttonTitleArray = @[@"冒泡广场",@"朋友圈",@"热门冒泡"];
     
     HWCodingMessageViewController* message = [[HWCodingMessageViewController alloc] init];
     UIImage* messageSelectImage = [[UIImage imageNamed:
