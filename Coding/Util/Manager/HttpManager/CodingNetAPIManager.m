@@ -12,6 +12,8 @@
 #import "MJExtension.h"
 #import "ProjectCount.h"
 #import "HWTaskModel.h"
+#import "HWBannerModel.h"
+#import "Tweet.h"
 
 @implementation CodingNetAPIManager
 
@@ -111,6 +113,30 @@
     }];
 }
 
+- (void)requestBannersWithBlock:(void (^)(id, NSError *))block {
+    
+    [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:@"api/banner/type/app" Params:nil withMethodType:Get autoShowError:NO andBlock:^(id data, NSError *error) {
+        if (data) {
+            HWBannerList* bannerList = [HWBannerList mj_objectWithKeyValues:data];
+            block(bannerList, NULL);
+        } else {
+            block(nil, error);
+        }
+    }];
+}
+
+- (void)requestTweetsWithComplectionBlock:(void (^)(id data, NSError *))block {
+    NSString* path = @"api/tweet/public_tweets";
+    NSDictionary* params = @{@"sort":@"time"};
+    [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:path Params:params withMethodType:Get autoShowError:NO andBlock:^(id data, NSError *error) {
+        if (data) {
+            Tweets* tweets = [Tweets mj_objectWithKeyValues:data];
+            block(tweets, NULL);
+        } else {
+            block(nil, error);
+        }
+    }];
+}
 
 
 

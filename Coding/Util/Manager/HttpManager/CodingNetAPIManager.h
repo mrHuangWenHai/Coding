@@ -24,4 +24,9 @@
 - (void)requestProjectsHaveTasksWithCompleteBlock:(void(^)(HWProjectModel* projectModel, NSError* error))block;
 
 - (void)requestTasksSearchWithParams:(NSDictionary*)params CompleteBlock:(void(^)(HWTaskModel* taskModel, NSError* error))block;
+
+- (void)requestBannersWithBlock:(void(^)(id data, NSError* error))block;
+
+- (void)requestTweetsWithComplectionBlock:(void (^)(id data, NSError* error))block;
+
 @end

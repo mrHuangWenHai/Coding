@@ -16,6 +16,8 @@ pod 'SDWebImage', '~> 4.0'
 pod 'YLGIFImage'
 pod 'ODRefreshControl', '~> 1.2'
 pod 'YYText'
+pod 'hpple', '0.2.0'
+pod 'RegexKitLite-NoWarning', '1.1.0'
   target 'CodingTests' do
     inherit! :search_paths
     # Pods for testing
