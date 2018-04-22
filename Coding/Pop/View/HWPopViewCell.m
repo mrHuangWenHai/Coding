@@ -55,6 +55,10 @@
     _contentLabel.textColor = [UIColor colorWithHexString:@"0x323A45"];
     
     _showImageView = [[HWShowImageView alloc] initWithCellIndex:(NSUInteger) index];
+    __weak typeof(self) weakSelf = self;
+    _showImageView.showImageView = ^(NSUInteger tweetIndex, NSUInteger imageIndex) {
+        weakSelf.handleShowImage(tweetIndex, imageIndex);
+    };
     __weak typeof(self) weakself = self;
     _showImageView.imageViewFishLoad = ^(CGFloat height,NSUInteger index) {
         if (weakself.index != index) return;

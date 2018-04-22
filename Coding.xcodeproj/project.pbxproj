@@ -63,6 +63,10 @@
 		0177094D205D09A4002F890F /* HWProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0177094C205D09A4002F890F /* HWProjectDetailViewController.m */; };
 		01946D0B20790F9F003D89ED /* HWSwipeBetweenViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 01946D0A20790F9F003D89ED /* HWSwipeBetweenViewControllers.m */; };
 		01946D0E20791005003D89ED /* HWEasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01946D0D20791005003D89ED /* HWEasePageViewController.m */; };
+		0197F41220861D68009939AF /* HWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197F41120861D68009939AF /* HWPhotoBrowser.m */; };
+		0197F41520862616009939AF /* HWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197F41420862616009939AF /* HWPhoto.m */; };
+		0197F4182086340E009939AF /* HWPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197F4172086340E009939AF /* HWPhotoView.m */; };
+		0197F41C20877E2B009939AF /* HWPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197F41B20877E2B009939AF /* HWPhotoToolbar.m */; };
 		01E371B2207E62A1005DFEE4 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E371B1207E62A1005DFEE4 /* NSString+Common.m */; };
 		01E371B5207E638D005DFEE4 /* NSString+Emojize.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E371B4207E638D005DFEE4 /* NSString+Emojize.m */; };
 		01E371B9207E6491005DFEE4 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E371B8207E6491005DFEE4 /* NSObject+Common.m */; };
@@ -202,6 +206,15 @@
 		01946D0A20790F9F003D89ED /* HWSwipeBetweenViewControllers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWSwipeBetweenViewControllers.m; sourceTree = "<group>"; };
 		01946D0C20791005003D89ED /* HWEasePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWEasePageViewController.h; sourceTree = "<group>"; };
 		01946D0D20791005003D89ED /* HWEasePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWEasePageViewController.m; sourceTree = "<group>"; };
+		0197F41020861D68009939AF /* HWPhotoBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPhotoBrowser.h; sourceTree = "<group>"; };
+		0197F41120861D68009939AF /* HWPhotoBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPhotoBrowser.m; sourceTree = "<group>"; };
+		0197F41320862616009939AF /* HWPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPhoto.h; sourceTree = "<group>"; };
+		0197F41420862616009939AF /* HWPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPhoto.m; sourceTree = "<group>"; };
+		0197F4162086340E009939AF /* HWPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPhotoView.h; sourceTree = "<group>"; };
+		0197F4172086340E009939AF /* HWPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPhotoView.m; sourceTree = "<group>"; };
+		0197F41920863C25009939AF /* PhotoBrowserHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserHeader.h; sourceTree = "<group>"; };
+		0197F41A20877E2B009939AF /* HWPhotoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWPhotoToolbar.h; sourceTree = "<group>"; };
+		0197F41B20877E2B009939AF /* HWPhotoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWPhotoToolbar.m; sourceTree = "<group>"; };
 		01E371B0207E62A1005DFEE4 /* NSString+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
 		01E371B1207E62A1005DFEE4 /* NSString+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		01E371B3207E638D005DFEE4 /* NSString+Emojize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Emojize.h"; sourceTree = "<group>"; };
@@ -489,6 +502,7 @@
 		0177029E20580C86002F890F /* Pop */ = {
 			isa = PBXGroup;
 			children = (
+				0197F40F208619F0009939AF /* HWPhotoBrowser */,
 				015F5555207E499F00B1DB35 /* View */,
 				015F554E207BB8CE00B1DB35 /* Model */,
 				01946D0820790F63003D89ED /* Controller */,
@@ -583,6 +597,22 @@
 				015F5553207BBC7800B1DB35 /* HWBannderHandler.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0197F40F208619F0009939AF /* HWPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				0197F41020861D68009939AF /* HWPhotoBrowser.h */,
+				0197F41120861D68009939AF /* HWPhotoBrowser.m */,
+				0197F41320862616009939AF /* HWPhoto.h */,
+				0197F41420862616009939AF /* HWPhoto.m */,
+				0197F4162086340E009939AF /* HWPhotoView.h */,
+				0197F4172086340E009939AF /* HWPhotoView.m */,
+				0197F41920863C25009939AF /* PhotoBrowserHeader.h */,
+				0197F41A20877E2B009939AF /* HWPhotoToolbar.h */,
+				0197F41B20877E2B009939AF /* HWPhotoToolbar.m */,
+			);
+			path = HWPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		7E6CDF58D3290823145DF89A /* Frameworks */ = {
@@ -912,6 +942,7 @@
 				01770925205949FD002F890F /* UIColor+Expanded.m in Sources */,
 				01946D0B20790F9F003D89ED /* HWSwipeBetweenViewControllers.m in Sources */,
 				0177029D20580BBE002F890F /* HWCodingTabBarController.m in Sources */,
+				0197F41520862616009939AF /* HWPhoto.m in Sources */,
 				0119C9ED20693B9A00D88B5B /* HWTaskCell.m in Sources */,
 				015F5567207E609F00B1DB35 /* Comment.m in Sources */,
 				017702562054B951002F890F /* AppDelegate.m in Sources */,
@@ -919,6 +950,8 @@
 				01770939205A9DEB002F890F /* HWMainSearchBar.m in Sources */,
 				0119C9C82061333500D88B5B /* HWPopViewHander.m in Sources */,
 				0119C9CE20629E8E00D88B5B /* HWCodingNavigationController.m in Sources */,
+				0197F41220861D68009939AF /* HWPhotoBrowser.m in Sources */,
+				0197F4182086340E009939AF /* HWPhotoView.m in Sources */,
 				0177094D205D09A4002F890F /* HWProjectDetailViewController.m in Sources */,
 				015F5551207BB94100B1DB35 /* HWBannerModel.m in Sources */,
 				015F5561207E5EE400B1DB35 /* Tweet.m in Sources */,
@@ -941,6 +974,7 @@
 				01946D0E20791005003D89ED /* HWEasePageViewController.m in Sources */,
 				01E371C22081F74A005DFEE4 /* UIButton+Common.m in Sources */,
 				015F5564207E5F2B00B1DB35 /* HtmlMedia.m in Sources */,
+				0197F41C20877E2B009939AF /* HWPhotoToolbar.m in Sources */,
 				0119C9F9206A8FCC00D88B5B /* HWTaskModel.m in Sources */,
 				017702A520580DC5002F890F /* HWCodingMessageViewController.m in Sources */,
 				015F5558207E49C500B1DB35 /* HWPopViewCell.m in Sources */,

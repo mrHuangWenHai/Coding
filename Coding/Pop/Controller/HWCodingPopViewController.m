@@ -13,6 +13,8 @@
 #import "HWBannerModel.h"
 #import "HWPopViewCell.h"
 #import "Tweet.h"
+#import "HWPhoto.h"
+#import "HWPhotoBrowser.h"
 
 #define IS_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
@@ -20,6 +22,7 @@
 @property(nonatomic, strong)HWBannderHandler* bannderHandler;
 @property(nonatomic, strong)UITableView* tableView;
 @property(nonatomic, strong)Tweets* tweets;
+@property(nonatomic, strong)HWPhotoBrowser* photoBrowser;
 @end
 
 @implementation HWCodingPopViewController
@@ -97,6 +100,46 @@
             return;
         }
     };
+    
+    __weak typeof(self) weakself= self;
+    cell.handleShowImage = ^(NSUInteger tweetIndex, NSUInteger imageIndex) {
+        
+        NSLog(@"%lu %lu",(unsigned long)tweetIndex, (unsigned long)imageIndex);
+        Tweet* tweet = weakself.tweets.data[tweetIndex];
+        __block NSMutableArray* photoArray = [[NSMutableArray alloc] initWithCapacity:tweet.htmlMedia.imageItems.count];
+        [tweet.htmlMedia.imageItems enumerateObjectsUsingBlock:^(HtmlMediaItem* item, NSUInteger idx, BOOL * _Nonnull stop) {
+            HWPhoto* photo = [[HWPhoto alloc] init];
+            photo.url = [NSURL URLWithString:item.src];
+            photo.placeholder = [UIImage imageNamed:@"placeholder_coding_square_150"];
+            [photoArray addObject:photo];
+        }];
+        
+        HWPhotoBrowser* photoBrowser = [[HWPhotoBrowser alloc] init];
+        photoBrowser.courentIndex = imageIndex;
+        photoBrowser.photos = photoArray;
+        [photoBrowser show];
+    };
+    
+//    if (indexPath.row == 1) {
+//        
+//        Tweet* tweet = weakself.tweets.data[1];
+//        __block NSMutableArray* photoArray = [[NSMutableArray alloc] initWithCapacity:tweet.htmlMedia.imageItems.count];
+//        [tweet.htmlMedia.imageItems enumerateObjectsUsingBlock:^(HtmlMediaItem* item, NSUInteger idx, BOOL * _Nonnull stop) {
+//            HWPhoto* photo = [[HWPhoto alloc] init];
+//            photo.url = [NSURL URLWithString:item.src];
+//            photo.placeholder = [UIImage imageNamed:@"placeholder_coding_square_150"];
+//            [photoArray addObject:photo];
+//        }];
+//
+//        self.photoBrowser = [[HWPhotoBrowser alloc] init];
+//        self.photoBrowser.courentIndex = 0;
+//        self.photoBrowser.photos = photoArray;
+//     //   self.photoBrowser.photoScrollView.delegate = self;
+//        [self.photoBrowser show];
+//        
+//
+//    }
+    
     cell.tweet = tweet;
     return cell;
 }
@@ -104,6 +147,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return self.tweets.data.count;
+}
+
+- (void)handleShowDetailImageView {
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
 }
 
 @end

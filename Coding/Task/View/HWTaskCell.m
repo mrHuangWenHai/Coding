@@ -79,7 +79,8 @@
     }
     __weak typeof(self) weakself = self;
     [self.taskImageView sd_setImageWithURL:url completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        [weakself.taskImageView setCornerRadius];
+        __strong typeof (weakself) strongSelf = weakself;
+        [strongSelf.taskImageView setCornerRadius];
     }];
     
     UIFont* font = [UIFont systemFontOfSize:15];

@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 @class Tweet;
 typedef void (^CellRefreshBlock)(void);
+typedef void(^HandleShowImage)(NSUInteger tweetIndex, NSUInteger imageIndex);
 
 @interface HWPopViewCell : UITableViewCell
 @property(nonatomic, strong)Tweet* tweet;
 @property(nonatomic, copy)CellRefreshBlock cellRefreshBlock;
+@property(nonatomic, copy)HandleShowImage handleShowImage;
 @property(nonatomic, assign)NSUInteger index;
 @end

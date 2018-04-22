@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^TapImageView)(void);
 @interface HWImageView : UIImageView
-
+@property(nonatomic, copy)TapImageView tap;
 @end

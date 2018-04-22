@@ -9,7 +9,9 @@
 #import "HWShowImageView.h"
 #import "HtmlMedia.h"
 #import "Tweet.h"
+#import "HWImageView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+
 
 #define singleImageWidth  [UIScreen mainScreen].bounds.size.width / 2 + 10
 
@@ -34,8 +36,11 @@
     __weak typeof(self) weakself = self;
     if (_imageArray.count == 1) {
         HtmlMediaItem* htmlMediaItem = [_imageArray firstObject];
-        UIImageView* imageView = [[UIImageView alloc] init];
+        HWImageView* imageView = [[HWImageView alloc] init];
         NSUInteger index = weakself.index;
+        imageView.tap = ^{
+            weakself.showImageView(weakself.index, 0);
+        };
         [imageView sd_setImageWithURL:[NSURL URLWithString:htmlMediaItem.src]
                      placeholderImage:[UIImage imageNamed:@"placeholder_coding_square_150"]
                             completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
@@ -50,8 +55,13 @@
     } else {
         
         [_imageArray enumerateObjectsUsingBlock:^(HtmlMediaItem* htmlMediaItem, NSUInteger idx, BOOL * _Nonnull stop) {
-            UIImageView* imageView = NULL;
-            imageView = [[UIImageView alloc] init];
+            HWImageView* imageView = NULL;
+            imageView = [[HWImageView alloc] init];
+            
+            imageView.tap = ^{
+                NSUInteger imageIndex = idx;
+                weakself.showImageView(weakself.index, imageIndex);
+            };
             
             [imageView sd_setImageWithURL:[NSURL URLWithString:htmlMediaItem.src]
                          placeholderImage:[UIImage imageNamed:@"placeholder_coding_square_80"]

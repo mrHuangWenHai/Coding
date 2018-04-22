@@ -9,13 +9,18 @@
 #import "HWImageView.h"
 
 @implementation HWImageView
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.userInteractionEnabled = true;
+        UIGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)];
+        [self addGestureRecognizer:tapGesture];
+    }
+    return self;
 }
-*/
+
+- (void)handleTap {
+    self.tap();
+}
 
 @end
