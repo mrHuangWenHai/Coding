@@ -14,6 +14,7 @@
 #import "HWTaskModel.h"
 #import "HWBannerModel.h"
 #import "Tweet.h"
+#import "MessageModel.h"
 
 @implementation CodingNetAPIManager
 
@@ -138,8 +139,55 @@
     }];
 }
 
+- (void)requestUnReadTotalNotificationWithBlock:(void(^)(id data, NSError *error))block {
+    [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:@"api/notification/unread-count" Params:nil withMethodType:Get autoShowError:true andBlock:^(id data, NSError *error) {
+        block(data, error);
+    }];
+}
 
+- (void)requestUnReadNotificationsWithBlock:(void(^)(id data, NSError *error))block {
+    
+    NSMutableDictionary *notificationDict = [[NSMutableDictionary alloc] init];
+    
+    [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:@"api/notification/unread-count" Params:@{@"type" : @(0)} withMethodType:Get autoShowError:true andBlock:^(id data, NSError *error) {
+        if (data) {
+            NSLog(@"%@",data);
+            [notificationDict setObject:[data valueForKeyPath:@"data"] forKey:@"notification_at"];
+            [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:@"api/notification/unread-count?type=1&type=2" Params:nil withMethodType:Get autoShowError:true andBlock:^(id dataComment, NSError *errorComment) {
+                if (dataComment) {
+                    [notificationDict setObject:[dataComment valueForKeyPath:@"data"] forKey:@"notification_comment"];
+                    [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:@"api/notification/unread-count?type=4&type=6" Params:nil withMethodType:Get autoShowError:true andBlock:^(id dataSystem, NSError *errorSystem) {
+                        if (dataSystem) {
+                            [notificationDict setObject:[dataSystem valueForKeyPath:@"data"] forKey:@"notification_system"];
+                            block(notificationDict, nil);
+                        } else {
+                            block(nil, errorSystem);
+                        }
+                    }];
 
+                } else {
+                    block(nil,errorComment);
+                }
+            }];
+
+        } else {
+            block(nil, error);
+        }
+    }];
+}
+
+- (void)requestMessageWithParam:(NSDictionary*)param andBlock:(void (^)(MessageModel* messageModel, NSError *error))block {
+    [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:@"api/message/conversations" Params:param withMethodType:Get autoShowError:true andBlock:^(id data, NSError *error) {
+        NSLog(@"%@",data);
+        if (data) {
+            NSDictionary* dataDictionary = (NSDictionary*)[data valueForKey:@"data"];
+            MessageModel* messageModel = [MessageModel mj_objectWithKeyValues:dataDictionary];
+            block(messageModel, nil);
+        } else {
+            block(nil, error);
+        }
+    }];
+}
 
 
 

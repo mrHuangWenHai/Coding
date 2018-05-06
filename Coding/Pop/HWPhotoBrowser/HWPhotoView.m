@@ -108,7 +108,6 @@
         self.isDoubleTouch = false;
     }
     
-   
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)tap {

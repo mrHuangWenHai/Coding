@@ -14,6 +14,7 @@
 #import "HWCodingMeViewController.h"
 #import "HWCodingNavigationController.h"
 #import "HWSwipeBetweenViewControllers.h"
+#import "CodingNetAPIManager.h"
 
 @interface HWCodingTabBarController ()
 
@@ -83,6 +84,12 @@
                                                       selectedImage:messageSelectImage];
     message.tabBarItem = messageItem;
     HWCodingNavigationController* messageNav = [[HWCodingNavigationController alloc] initWithRootViewController:message];
+    
+    message.tabBarItem.badgeColor = [UIColor redColor];
+    [[CodingNetAPIManager sharedManager] requestUnReadTotalNotificationWithBlock:^(id data, NSError *error) {
+        message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%@",[(NSDictionary*)data valueForKey:@"data"]];
+    }];
+    
     
     HWCodingMeViewController* me = [[HWCodingMeViewController alloc] init];
     UIImage* meSelectImage = [[UIImage imageNamed:

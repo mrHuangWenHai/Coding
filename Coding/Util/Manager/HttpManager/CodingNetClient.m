@@ -38,7 +38,7 @@
     switch (method) {
         case Get:{
             
-            NSString* sid = @"sid=322fce4a-07d5-40f1-b8ae-bc1c22881279";
+            NSString* sid = @"sid=c566ac28-7224-43b0-9ff3-f6293c6c71f9";
             [self.requestSerializer setValue:sid forHTTPHeaderField:@"Cookie"];
             
             [self GET:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

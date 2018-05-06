@@ -10,6 +10,7 @@
 @class ProjectCount;
 @class HWProjectModel;
 @class HWTaskModel;
+@class MessageModel;
 
 @interface CodingNetAPIManager : NSObject
 
@@ -29,4 +30,9 @@
 
 - (void)requestTweetsWithComplectionBlock:(void (^)(id data, NSError* error))block;
 
+- (void)requestUnReadNotificationsWithBlock:(void(^)(id data, NSError *error))block;
+
+- (void)requestMessageWithParam:(NSDictionary*)param andBlock:(void (^)(MessageModel* messageModel, NSError *error))block;
+
+- (void)requestUnReadTotalNotificationWithBlock:(void(^)(id data, NSError *error))block;
 @end

@@ -24,6 +24,10 @@
 		0119CA0A206DCCBD00D88B5B /* HWAddTaskDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119CA09206DCCBD00D88B5B /* HWAddTaskDescription.m */; };
 		0119CA0E206DEFA500D88B5B /* HWTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119CA0C206DEFA500D88B5B /* HWTextCell.m */; };
 		0119CA0F206DEFA500D88B5B /* HWTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0119CA0D206DEFA500D88B5B /* HWTextCell.xib */; };
+		0119FA9D209E23F30048A159 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FA9C209E23F30048A159 /* MessageModel.m */; };
+		0119FAA0209E30BD0048A159 /* UIView+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FA9F209E30BD0048A159 /* UIView+Expanded.m */; };
+		0119FAA5209E97170048A159 /* SystemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FAA3209E97170048A159 /* SystemTableViewCell.m */; };
+		0119FAA6209E97170048A159 /* SystemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0119FAA4209E97170048A159 /* SystemTableViewCell.xib */; };
 		012D854D205D1B280065D796 /* HWProjectDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D854B205D1B280065D796 /* HWProjectDetailCell.m */; };
 		012D854E205D1B280065D796 /* HWProjectDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012D854C205D1B280065D796 /* HWProjectDetailCell.xib */; };
 		012D8551205D52250065D796 /* HWProjectDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D8550205D52250065D796 /* HWProjectDescriptionCell.m */; };
@@ -130,6 +134,14 @@
 		0119CA0B206DEFA500D88B5B /* HWTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTextCell.h; sourceTree = "<group>"; };
 		0119CA0C206DEFA500D88B5B /* HWTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTextCell.m; sourceTree = "<group>"; };
 		0119CA0D206DEFA500D88B5B /* HWTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HWTextCell.xib; sourceTree = "<group>"; };
+		0119FA98209E07D80048A159 /* MessageHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageHeader.h; sourceTree = "<group>"; };
+		0119FA9B209E23F30048A159 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		0119FA9C209E23F30048A159 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		0119FA9E209E30BD0048A159 /* UIView+Expanded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Expanded.h"; sourceTree = "<group>"; };
+		0119FA9F209E30BD0048A159 /* UIView+Expanded.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Expanded.m"; sourceTree = "<group>"; };
+		0119FAA2209E97170048A159 /* SystemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemTableViewCell.h; sourceTree = "<group>"; };
+		0119FAA3209E97170048A159 /* SystemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemTableViewCell.m; sourceTree = "<group>"; };
+		0119FAA4209E97170048A159 /* SystemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemTableViewCell.xib; sourceTree = "<group>"; };
 		012D854A205D1B280065D796 /* HWProjectDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWProjectDetailCell.h; sourceTree = "<group>"; };
 		012D854B205D1B280065D796 /* HWProjectDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWProjectDetailCell.m; sourceTree = "<group>"; };
 		012D854C205D1B280065D796 /* HWProjectDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HWProjectDetailCell.xib; sourceTree = "<group>"; };
@@ -307,6 +319,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0119FA99209E23BC0048A159 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				017702A320580DC5002F890F /* HWCodingMessageViewController.h */,
+				017702A420580DC5002F890F /* HWCodingMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0119FA9A209E23CC0048A159 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0119FA9B209E23F30048A159 /* MessageModel.h */,
+				0119FA9C209E23F30048A159 /* MessageModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		0119FAA1209E96E70048A159 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0119FAA2209E97170048A159 /* SystemTableViewCell.h */,
+				0119FAA3209E97170048A159 /* SystemTableViewCell.m */,
+				0119FAA4209E97170048A159 /* SystemTableViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		01386E9B9171B9D45BC0E679 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +496,8 @@
 				01E371B8207E6491005DFEE4 /* NSObject+Common.m */,
 				01E371C02081F74A005DFEE4 /* UIButton+Common.h */,
 				01E371C12081F74A005DFEE4 /* UIButton+Common.m */,
+				0119FA9E209E30BD0048A159 /* UIView+Expanded.h */,
+				0119FA9F209E30BD0048A159 /* UIView+Expanded.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -514,8 +556,10 @@
 		017702A220580D87002F890F /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				017702A320580DC5002F890F /* HWCodingMessageViewController.h */,
-				017702A420580DC5002F890F /* HWCodingMessageViewController.m */,
+				0119FAA1209E96E70048A159 /* view */,
+				0119FA9A209E23CC0048A159 /* model */,
+				0119FA99209E23BC0048A159 /* Controller */,
+				0119FA98209E07D80048A159 /* MessageHeader.h */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -740,6 +784,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0119FAA6209E97170048A159 /* SystemTableViewCell.xib in Resources */,
 				0177092E2059745F002F890F /* HWProjectTableViewCell.xib in Resources */,
 				012D854E205D1B280065D796 /* HWProjectDetailCell.xib in Resources */,
 				0177094A205CBD03002F890F /* loading_monkey@2x.gif in Resources */,
@@ -923,6 +968,7 @@
 			files = (
 				017702A120580CAB002F890F /* HWCodingPopViewController.m in Sources */,
 				017702642054B951002F890F /* main.m in Sources */,
+				0119FAA5209E97170048A159 /* SystemTableViewCell.m in Sources */,
 				017702922057C8D0002F890F /* CodingNetClient.m in Sources */,
 				0119C9FF206CC50900D88B5B /* NSDate+Helper.m in Sources */,
 				012D8551205D52250065D796 /* HWProjectDescriptionCell.m in Sources */,
@@ -942,6 +988,7 @@
 				01770925205949FD002F890F /* UIColor+Expanded.m in Sources */,
 				01946D0B20790F9F003D89ED /* HWSwipeBetweenViewControllers.m in Sources */,
 				0177029D20580BBE002F890F /* HWCodingTabBarController.m in Sources */,
+				0119FAA0209E30BD0048A159 /* UIView+Expanded.m in Sources */,
 				0197F41520862616009939AF /* HWPhoto.m in Sources */,
 				0119C9ED20693B9A00D88B5B /* HWTaskCell.m in Sources */,
 				015F5567207E609F00B1DB35 /* Comment.m in Sources */,
@@ -962,6 +1009,7 @@
 				012D8592205FDCA50065D796 /* HWFilterHander.m in Sources */,
 				0119CA07206DCC3000D88B5B /* HWShowTaskViewController.m in Sources */,
 				0119C9F6206947C900D88B5B /* HWTaskViewHander.m in Sources */,
+				0119FA9D209E23F30048A159 /* MessageModel.m in Sources */,
 				0119C9F0206941A800D88B5B /* UIView+Frame.m in Sources */,
 				017702A920580EF5002F890F /* HWCodingMeViewController.m in Sources */,
 				01E371B5207E638D005DFEE4 /* NSString+Emojize.m in Sources */,
