@@ -67,6 +67,9 @@
         weakself.cellRefreshBlock();
     };
     _leaveMessageView = [[HWLeaveMessageView alloc] init];
+    _leaveMessageView.messageHandleBlock = ^{
+        weakSelf.handleMessage();
+    };
     
     [self.contentView addSubview:_headImageView];
     [self.contentView addSubview:_userNameLabel];

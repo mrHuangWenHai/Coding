@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @class Tweet;
-@interface HWLeaveMessageView : UIView
+typedef void(^MessageHandleBlock)(void);
 
+@interface HWLeaveMessageView : UIView
 @property(nonatomic, copy)NSArray* likeUsrArray;
 @property(nonatomic, strong)Tweet* tweet;
+@property(nonatomic, copy)MessageHandleBlock messageHandleBlock;
 @end

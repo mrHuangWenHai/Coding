@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProjectMessageCell : UITableViewCell
-
+@property(nonatomic, strong)UILabel* privateMessageLabel;
+@property(nonatomic, strong)UILabel* publiceMessageLabel;
 @end

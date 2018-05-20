@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MeCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *headImageView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *userLevel;
 
 @end

@@ -57,6 +57,8 @@ const CGFloat likeImageWidth = 25;
     _rewardButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _messageButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_messageButton setImage:[UIImage imageNamed:@"tweet_btn_comment"] forState:UIControlStateNormal];
+    [_messageButton addTarget:self action:@selector(messageButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
     _deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_deleteButton setTitle:@"删除" forState:UIControlStateNormal];
     [_deleteButton setTitleColor:kColorBrandBlue forState:UIControlStateNormal];
@@ -164,6 +166,7 @@ const CGFloat likeImageWidth = 25;
     self.rewardButton.frame = CGRectMake(self.likeButton.getX + 10, self.deviceLabel.getY + top, likeWidth, likeHeight);
     [self.rewardButton tweetBtnAlignmentLeft:true];
     self.messageButton.frame = CGRectMake(width - likeWidth, self.deviceLabel.getY + top, likeWidth, likeHeight);
+    
     [self.messageButton tweetBtnAlignmentLeft:true];
     self.deleteButton.frame = CGRectMake(self.messageButton.getX - likeWidth * 2 - 10 , self.deviceLabel.getY + top, likeWidth, likeHeight);
     if (_tweet.like_users.count > 0 ){
@@ -203,6 +206,10 @@ const CGFloat likeImageWidth = 25;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.tweet.comments > 5 ? 6 : self.tweet.comment_list.count;
+}
+
+- (void)messageButtonClick {
+    self.messageHandleBlock();
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

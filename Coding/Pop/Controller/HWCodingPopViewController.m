@@ -15,14 +15,16 @@
 #import "Tweet.h"
 #import "HWPhoto.h"
 #import "HWPhotoBrowser.h"
+#import "HWMsgInputView.h"
 
 #define IS_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
-@interface HWCodingPopViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface HWCodingPopViewController ()<UITableViewDelegate, UITableViewDataSource, HWMessageInputViewContentDelegate>
 @property(nonatomic, strong)HWBannderHandler* bannderHandler;
 @property(nonatomic, strong)UITableView* tableView;
 @property(nonatomic, strong)Tweets* tweets;
 @property(nonatomic, strong)HWPhotoBrowser* photoBrowser;
+@property(nonatomic, strong)HWMsgInputView* msgInputView;
 @end
 
 @implementation HWCodingPopViewController
@@ -65,6 +67,9 @@
             
         }
     }];
+    
+    _msgInputView = [HWMsgInputView messageInputViewWithType:HWMessageInputContentTypePop];
+    _msgInputView.deleage = self;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -120,6 +125,11 @@
         [photoBrowser show];
     };
     
+    cell.handleMessage = ^{
+        [weakself.view addSubview:weakself.msgInputView];
+        [weakself.msgInputView showMsgInputView];
+    };
+    
 //    if (indexPath.row == 1) {
 //        
 //        Tweet* tweet = weakself.tweets.data[1];
@@ -142,6 +152,14 @@
     
     cell.tweet = tweet;
     return cell;
+}
+
+- (void)sendWithMessage:(NSString*)message {
+    
+}
+
+- (NSArray*)getButtonImageArray {
+    return @[@"keyboard_emotion_emoji", @"keyboard_emotion_emoji_code"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

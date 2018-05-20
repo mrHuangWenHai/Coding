@@ -15,6 +15,7 @@
 #import "HWBannerModel.h"
 #import "Tweet.h"
 #import "MessageModel.h"
+#import "UserServiceInfo.h"
 
 @implementation CodingNetAPIManager
 
@@ -29,7 +30,7 @@
 
 - (void)requestLoginWithPath:(NSString *)path Params:(id)params andBlock:(void (^)(id, NSError *))block {
     [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:path Params:params withMethodType:Post autoShowError:NO andBlock:^(id data, NSError *error) {
-        
+        block(data, error);
     }];
 }
 
@@ -183,6 +184,17 @@
             NSDictionary* dataDictionary = (NSDictionary*)[data valueForKey:@"data"];
             MessageModel* messageModel = [MessageModel mj_objectWithKeyValues:dataDictionary];
             block(messageModel, nil);
+        } else {
+            block(nil, error);
+        }
+    }];
+}
+
+- (void)requestServiceInfoBlock:(void(^)(UserServiceInfo* userServiceInfo, NSError *error))block {
+    [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:@"api/user/service_info" Params:nil withMethodType:Get autoShowError:true andBlock:^(id data, NSError *error) {
+        if (data) {
+            UserServiceInfo* userServiceInfo = [UserServiceInfo mj_objectWithKeyValues:(NSDictionary*)data[@"data"]];
+            block(userServiceInfo, nil);
         } else {
             block(nil, error);
         }

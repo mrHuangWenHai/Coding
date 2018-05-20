@@ -32,6 +32,9 @@
                              };
     NSString* path = @"api/v2/account/login";
     [[CodingNetAPIManager sharedManager] requestLoginWithPath:path Params:params andBlock:^(id data, NSError *error) {
+        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:(NSDictionary*)data[@"data"] forKey:@"userDict"];
+        [userDefaults synchronize];
         
     }];
     return YES;

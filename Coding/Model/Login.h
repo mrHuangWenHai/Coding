@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class User;
+
 @interface Login : NSObject
 
 + (BOOL) isLogin;
+
++ (User*) getCurUser;
 @end

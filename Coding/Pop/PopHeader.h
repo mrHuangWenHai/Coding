@@ -20,4 +20,10 @@
 #define kColorTableSectionBg [UIColor colorWithHexString:@"0xF2F4F6"]
 #define kColorDark4 [UIColor colorWithHexString:@"0x425063"]
 #define kTweet_CommentFont [UIFont systemFontOfSize:14]
+#define kMessageInputView_Height 50.0
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kKeyboardView_Height 216.0
+#define kKeyboardView_ToolBar_Height 30
+
 #endif /* PopHeader_h */

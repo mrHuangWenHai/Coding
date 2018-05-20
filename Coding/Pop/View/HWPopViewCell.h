@@ -10,10 +10,12 @@
 @class Tweet;
 typedef void (^CellRefreshBlock)(void);
 typedef void(^HandleShowImage)(NSUInteger tweetIndex, NSUInteger imageIndex);
+typedef void(^HandleMessage)(void);
 
 @interface HWPopViewCell : UITableViewCell
 @property(nonatomic, strong)Tweet* tweet;
 @property(nonatomic, copy)CellRefreshBlock cellRefreshBlock;
 @property(nonatomic, copy)HandleShowImage handleShowImage;
 @property(nonatomic, assign)NSUInteger index;
+@property(nonatomic, copy)HandleMessage handleMessage;
 @end

@@ -25,11 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBar.barTintColor = [UIColor whiteColor];
-    CGRect tabBarFrame = self.tabBar.frame;
-    CALayer* shadowLayer = [CALayer layer];
-    shadowLayer.frame = CGRectMake(0, tabBarFrame.origin.y - 1, tabBarFrame.size.width, 1);
-    shadowLayer.backgroundColor = [UIColor colorWithRed:232/255.0 green:235/255.0 blue:239/255.0 alpha:1].CGColor;
-    [self.view.layer addSublayer:shadowLayer];
+   // CGRect tabBarFrame = self.tabBar.frame;
+  //  CALayer* shadowLayer = [CALayer layer];
+  //  shadowLayer.frame = CGRectMake(0, tabBarFrame.origin.y - 1, tabBarFrame.size.width, 1);
+  //  shadowLayer.backgroundColor = [UIColor colorWithRed:232/255.0 green:235/255.0 blue:239/255.0 alpha:1].CGColor;
+  //  [self.view.layer addSublayer:shadowLayer];
     [self setupViewControllers];
 }
 

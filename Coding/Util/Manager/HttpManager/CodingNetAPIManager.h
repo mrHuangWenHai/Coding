@@ -11,6 +11,7 @@
 @class HWProjectModel;
 @class HWTaskModel;
 @class MessageModel;
+@class UserServiceInfo;
 
 @interface CodingNetAPIManager : NSObject
 
@@ -35,4 +36,6 @@
 - (void)requestMessageWithParam:(NSDictionary*)param andBlock:(void (^)(MessageModel* messageModel, NSError *error))block;
 
 - (void)requestUnReadTotalNotificationWithBlock:(void(^)(id data, NSError *error))block;
+
+- (void)requestServiceInfoBlock:(void(^)(UserServiceInfo* userServiceInfo, NSError *error))block;
 @end

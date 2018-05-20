@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface UserServiceInfo : NSObject
-
+@property(nonatomic, strong)NSString* balance ,*point_left;
+@property (strong, nonatomic)NSString *pri, *pub, *team;
+@property (strong, nonatomic) NSString *private_project_quota, *public_project_quota;
 @end

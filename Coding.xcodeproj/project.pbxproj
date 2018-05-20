@@ -28,6 +28,19 @@
 		0119FAA0209E30BD0048A159 /* UIView+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FA9F209E30BD0048A159 /* UIView+Expanded.m */; };
 		0119FAA5209E97170048A159 /* SystemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FAA3209E97170048A159 /* SystemTableViewCell.m */; };
 		0119FAA6209E97170048A159 /* SystemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0119FAA4209E97170048A159 /* SystemTableViewCell.xib */; };
+		0119FB6C20A6D92A0048A159 /* UserServiceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB6B20A6D92A0048A159 /* UserServiceInfo.m */; };
+		0119FB6F20A6DE620048A159 /* ProjectMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB6E20A6DE620048A159 /* ProjectMessageCell.m */; };
+		0119FB7320A7D62B0048A159 /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB7120A7D62B0048A159 /* MeCell.m */; };
+		0119FB7420A7D62B0048A159 /* MeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0119FB7220A7D62B0048A159 /* MeCell.xib */; };
+		0119FB7720AB47260048A159 /* HWMsgInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB7620AB47250048A159 /* HWMsgInputView.m */; };
+		0119FB7A20AC6D620048A159 /* HWTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB7920AC6D620048A159 /* HWTextInputView.m */; };
+		0119FB7C20ADC29D0048A159 /* emotion_list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0119FB7B20ADC2970048A159 /* emotion_list.plist */; };
+		0119FB7F20ADD8780048A159 /* HWEmotionKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB7E20ADD8780048A159 /* HWEmotionKeyboardView.m */; };
+		0119FB8220ADEA810048A159 /* HWEmotionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB8120ADEA810048A159 /* HWEmotionModel.m */; };
+		0119FB8520ADF0860048A159 /* HWEmotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB8420ADF0860048A159 /* HWEmotionCell.m */; };
+		0119FB8820ADFA330048A159 /* HWEmotionImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB8720ADFA330048A159 /* HWEmotionImageCell.m */; };
+		0119FB8C20AE6E4F0048A159 /* HWImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119FB8A20AE6E4F0048A159 /* HWImageCell.m */; };
+		0119FB8D20AE6E500048A159 /* HWImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0119FB8B20AE6E4F0048A159 /* HWImageCell.xib */; };
 		012D854D205D1B280065D796 /* HWProjectDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D854B205D1B280065D796 /* HWProjectDetailCell.m */; };
 		012D854E205D1B280065D796 /* HWProjectDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012D854C205D1B280065D796 /* HWProjectDetailCell.xib */; };
 		012D8551205D52250065D796 /* HWProjectDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D8550205D52250065D796 /* HWProjectDescriptionCell.m */; };
@@ -142,6 +155,30 @@
 		0119FAA2209E97170048A159 /* SystemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemTableViewCell.h; sourceTree = "<group>"; };
 		0119FAA3209E97170048A159 /* SystemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemTableViewCell.m; sourceTree = "<group>"; };
 		0119FAA4209E97170048A159 /* SystemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemTableViewCell.xib; sourceTree = "<group>"; };
+		0119FB6620A6CAF80048A159 /* MeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeader.h; sourceTree = "<group>"; };
+		0119FB6A20A6D92A0048A159 /* UserServiceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserServiceInfo.h; sourceTree = "<group>"; };
+		0119FB6B20A6D92A0048A159 /* UserServiceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserServiceInfo.m; sourceTree = "<group>"; };
+		0119FB6D20A6DE620048A159 /* ProjectMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectMessageCell.h; sourceTree = "<group>"; };
+		0119FB6E20A6DE620048A159 /* ProjectMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectMessageCell.m; sourceTree = "<group>"; };
+		0119FB7020A7D62B0048A159 /* MeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeCell.h; sourceTree = "<group>"; };
+		0119FB7120A7D62B0048A159 /* MeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeCell.m; sourceTree = "<group>"; };
+		0119FB7220A7D62B0048A159 /* MeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCell.xib; sourceTree = "<group>"; };
+		0119FB7520AB47250048A159 /* HWMsgInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWMsgInputView.h; sourceTree = "<group>"; };
+		0119FB7620AB47250048A159 /* HWMsgInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWMsgInputView.m; sourceTree = "<group>"; };
+		0119FB7820AC6D620048A159 /* HWTextInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTextInputView.h; sourceTree = "<group>"; };
+		0119FB7920AC6D620048A159 /* HWTextInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTextInputView.m; sourceTree = "<group>"; };
+		0119FB7B20ADC2970048A159 /* emotion_list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emotion_list.plist; sourceTree = "<group>"; };
+		0119FB7D20ADD8780048A159 /* HWEmotionKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWEmotionKeyboardView.h; sourceTree = "<group>"; };
+		0119FB7E20ADD8780048A159 /* HWEmotionKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWEmotionKeyboardView.m; sourceTree = "<group>"; };
+		0119FB8020ADEA810048A159 /* HWEmotionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWEmotionModel.h; sourceTree = "<group>"; };
+		0119FB8120ADEA810048A159 /* HWEmotionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWEmotionModel.m; sourceTree = "<group>"; };
+		0119FB8320ADF0850048A159 /* HWEmotionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWEmotionCell.h; sourceTree = "<group>"; };
+		0119FB8420ADF0860048A159 /* HWEmotionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWEmotionCell.m; sourceTree = "<group>"; };
+		0119FB8620ADFA330048A159 /* HWEmotionImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWEmotionImageCell.h; sourceTree = "<group>"; };
+		0119FB8720ADFA330048A159 /* HWEmotionImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWEmotionImageCell.m; sourceTree = "<group>"; };
+		0119FB8920AE6E4F0048A159 /* HWImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWImageCell.h; sourceTree = "<group>"; };
+		0119FB8A20AE6E4F0048A159 /* HWImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWImageCell.m; sourceTree = "<group>"; };
+		0119FB8B20AE6E4F0048A159 /* HWImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HWImageCell.xib; sourceTree = "<group>"; };
 		012D854A205D1B280065D796 /* HWProjectDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWProjectDetailCell.h; sourceTree = "<group>"; };
 		012D854B205D1B280065D796 /* HWProjectDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWProjectDetailCell.m; sourceTree = "<group>"; };
 		012D854C205D1B280065D796 /* HWProjectDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HWProjectDetailCell.xib; sourceTree = "<group>"; };
@@ -347,6 +384,37 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		0119FB6720A6CBA80048A159 /* Controoler */ = {
+			isa = PBXGroup;
+			children = (
+				017702A720580EF5002F890F /* HWCodingMeViewController.h */,
+				017702A820580EF5002F890F /* HWCodingMeViewController.m */,
+			);
+			path = Controoler;
+			sourceTree = "<group>";
+		};
+		0119FB6820A6CBB60048A159 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0119FB6D20A6DE620048A159 /* ProjectMessageCell.h */,
+				0119FB6E20A6DE620048A159 /* ProjectMessageCell.m */,
+				0119FB7020A7D62B0048A159 /* MeCell.h */,
+				0119FB7120A7D62B0048A159 /* MeCell.m */,
+				0119FB7220A7D62B0048A159 /* MeCell.xib */,
+			);
+			name = View;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0119FB6920A6CBCB0048A159 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0119FB6A20A6D92A0048A159 /* UserServiceInfo.h */,
+				0119FB6B20A6D92A0048A159 /* UserServiceInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		01386E9B9171B9D45BC0E679 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +439,8 @@
 				015F5563207E5F2B00B1DB35 /* HtmlMedia.m */,
 				015F5565207E609F00B1DB35 /* Comment.h */,
 				015F5566207E609F00B1DB35 /* Comment.m */,
+				0119FB8020ADEA810048A159 /* HWEmotionModel.h */,
+				0119FB8120ADEA810048A159 /* HWEmotionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +460,19 @@
 				01E371BE2081D6EB005DFEE4 /* HWTweetLikeUserCell.m */,
 				01E371C32082625F005DFEE4 /* HWMessageCell.h */,
 				01E371C42082625F005DFEE4 /* HWMessageCell.m */,
+				0119FB7520AB47250048A159 /* HWMsgInputView.h */,
+				0119FB7620AB47250048A159 /* HWMsgInputView.m */,
+				0119FB7820AC6D620048A159 /* HWTextInputView.h */,
+				0119FB7920AC6D620048A159 /* HWTextInputView.m */,
+				0119FB7D20ADD8780048A159 /* HWEmotionKeyboardView.h */,
+				0119FB7E20ADD8780048A159 /* HWEmotionKeyboardView.m */,
+				0119FB8320ADF0850048A159 /* HWEmotionCell.h */,
+				0119FB8420ADF0860048A159 /* HWEmotionCell.m */,
+				0119FB8620ADFA330048A159 /* HWEmotionImageCell.h */,
+				0119FB8720ADFA330048A159 /* HWEmotionImageCell.m */,
+				0119FB8920AE6E4F0048A159 /* HWImageCell.h */,
+				0119FB8A20AE6E4F0048A159 /* HWImageCell.m */,
+				0119FB8B20AE6E4F0048A159 /* HWImageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +521,7 @@
 				0177029C20580BBE002F890F /* HWCodingTabBarController.m */,
 				0119C9CC20629E8D00D88B5B /* HWCodingNavigationController.h */,
 				0119C9CD20629E8D00D88B5B /* HWCodingNavigationController.m */,
+				0119FB7B20ADC2970048A159 /* emotion_list.plist */,
 			);
 			path = Coding;
 			sourceTree = "<group>";
@@ -567,8 +651,10 @@
 		017702A620580ED1002F890F /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				017702A720580EF5002F890F /* HWCodingMeViewController.h */,
-				017702A820580EF5002F890F /* HWCodingMeViewController.m */,
+				0119FB6920A6CBCB0048A159 /* Model */,
+				0119FB6820A6CBB60048A159 /* View */,
+				0119FB6720A6CBA80048A159 /* Controoler */,
+				0119FB6620A6CAF80048A159 /* MeHeader.h */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -787,11 +873,14 @@
 				0119FAA6209E97170048A159 /* SystemTableViewCell.xib in Resources */,
 				0177092E2059745F002F890F /* HWProjectTableViewCell.xib in Resources */,
 				012D854E205D1B280065D796 /* HWProjectDetailCell.xib in Resources */,
+				0119FB8D20AE6E500048A159 /* HWImageCell.xib in Resources */,
 				0177094A205CBD03002F890F /* loading_monkey@2x.gif in Resources */,
+				0119FB7C20ADC29D0048A159 /* emotion_list.plist in Resources */,
 				017702612054B951002F890F /* LaunchScreen.storyboard in Resources */,
 				0119CA0F206DEFA500D88B5B /* HWTextCell.xib in Resources */,
 				0177025E2054B951002F890F /* Assets.xcassets in Resources */,
 				0177025C2054B951002F890F /* Main.storyboard in Resources */,
+				0119FB7420A7D62B0048A159 /* MeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -970,6 +1059,7 @@
 				017702642054B951002F890F /* main.m in Sources */,
 				0119FAA5209E97170048A159 /* SystemTableViewCell.m in Sources */,
 				017702922057C8D0002F890F /* CodingNetClient.m in Sources */,
+				0119FB7F20ADD8780048A159 /* HWEmotionKeyboardView.m in Sources */,
 				0119C9FF206CC50900D88B5B /* NSDate+Helper.m in Sources */,
 				012D8551205D52250065D796 /* HWProjectDescriptionCell.m in Sources */,
 				0119C9EA206932F500D88B5B /* UIImageView+Expanded.m in Sources */,
@@ -979,20 +1069,24 @@
 				012D854D205D1B280065D796 /* HWProjectDetailCell.m in Sources */,
 				0177028F2057C511002F890F /* CodingNetAPIManager.m in Sources */,
 				01770936205978C9002F890F /* HWTableViewHander.m in Sources */,
+				0119FB7720AB47260048A159 /* HWMsgInputView.m in Sources */,
 				01770945205C0246002F890F /* UIImage+Expanded.m in Sources */,
 				015F5554207BBC7800B1DB35 /* HWBannderHandler.m in Sources */,
 				01E371B9207E6491005DFEE4 /* NSObject+Common.m in Sources */,
+				0119FB8520ADF0860048A159 /* HWEmotionCell.m in Sources */,
 				0119CA0E206DEFA500D88B5B /* HWTextCell.m in Sources */,
 				01E371C52082625F005DFEE4 /* HWMessageCell.m in Sources */,
 				0119CA0A206DCCBD00D88B5B /* HWAddTaskDescription.m in Sources */,
 				01770925205949FD002F890F /* UIColor+Expanded.m in Sources */,
 				01946D0B20790F9F003D89ED /* HWSwipeBetweenViewControllers.m in Sources */,
+				0119FB7320A7D62B0048A159 /* MeCell.m in Sources */,
 				0177029D20580BBE002F890F /* HWCodingTabBarController.m in Sources */,
 				0119FAA0209E30BD0048A159 /* UIView+Expanded.m in Sources */,
 				0197F41520862616009939AF /* HWPhoto.m in Sources */,
 				0119C9ED20693B9A00D88B5B /* HWTaskCell.m in Sources */,
 				015F5567207E609F00B1DB35 /* Comment.m in Sources */,
 				017702562054B951002F890F /* AppDelegate.m in Sources */,
+				0119FB8C20AE6E4F0048A159 /* HWImageCell.m in Sources */,
 				0119CA02206CC57A00D88B5B /* NSDate+Convenience.m in Sources */,
 				01770939205A9DEB002F890F /* HWMainSearchBar.m in Sources */,
 				0119C9C82061333500D88B5B /* HWPopViewHander.m in Sources */,
@@ -1000,18 +1094,22 @@
 				0197F41220861D68009939AF /* HWPhotoBrowser.m in Sources */,
 				0197F4182086340E009939AF /* HWPhotoView.m in Sources */,
 				0177094D205D09A4002F890F /* HWProjectDetailViewController.m in Sources */,
+				0119FB8820ADFA330048A159 /* HWEmotionImageCell.m in Sources */,
 				015F5551207BB94100B1DB35 /* HWBannerModel.m in Sources */,
+				0119FB7A20AC6D620048A159 /* HWTextInputView.m in Sources */,
 				015F5561207E5EE400B1DB35 /* Tweet.m in Sources */,
 				0119C9C5206008BA00D88B5B /* ProjectCount.m in Sources */,
 				0119C9CB206148DB00D88B5B /* HWMenuButton.m in Sources */,
 				0177092D2059745F002F890F /* HWProjectTableViewCell.m in Sources */,
 				0119C9D42062AD3F00D88B5B /* HWSegmentHander.m in Sources */,
+				0119FB6F20A6DE620048A159 /* ProjectMessageCell.m in Sources */,
 				012D8592205FDCA50065D796 /* HWFilterHander.m in Sources */,
 				0119CA07206DCC3000D88B5B /* HWShowTaskViewController.m in Sources */,
 				0119C9F6206947C900D88B5B /* HWTaskViewHander.m in Sources */,
 				0119FA9D209E23F30048A159 /* MessageModel.m in Sources */,
 				0119C9F0206941A800D88B5B /* UIView+Frame.m in Sources */,
 				017702A920580EF5002F890F /* HWCodingMeViewController.m in Sources */,
+				0119FB6C20A6D92A0048A159 /* UserServiceInfo.m in Sources */,
 				01E371B5207E638D005DFEE4 /* NSString+Emojize.m in Sources */,
 				01E371BC2081B26D005DFEE4 /* HWImageView.m in Sources */,
 				017702892054C136002F890F /* Login.m in Sources */,
@@ -1026,6 +1124,7 @@
 				0119C9F9206A8FCC00D88B5B /* HWTaskModel.m in Sources */,
 				017702A520580DC5002F890F /* HWCodingMessageViewController.m in Sources */,
 				015F5558207E49C500B1DB35 /* HWPopViewCell.m in Sources */,
+				0119FB8220ADEA810048A159 /* HWEmotionModel.m in Sources */,
 				015F555E207E4F4000B1DB35 /* HWLeaveMessageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

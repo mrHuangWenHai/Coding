@@ -10,4 +10,10 @@
 
 @implementation UserServiceInfo
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+              @"pri":@"private",
+              @"pub":@"public"
+              };
+}
 @end

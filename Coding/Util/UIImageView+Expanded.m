@@ -13,7 +13,7 @@
 - (void)setCornerRadius {
     
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:self.bounds.size];
-    CAShapeLayer *maskLayer = [[CAShapeLayer alloc]init];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     //设置大小
     maskLayer.frame = self.bounds;
     //设置图形样子
