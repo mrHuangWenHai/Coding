@@ -37,7 +37,6 @@
 
 - (void)loadSubViews {
     
-    self.backgroundColor = [UIColor redColor];
     UICollectionViewFlowLayout* layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(kScreen_Width, kKeyboardView_Height - kKeyboardView_ToolBar_Height);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -45,10 +44,9 @@
     layout.minimumInteritemSpacing = 0;
     _emotionCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, kKeyboardView_Height - kKeyboardView_ToolBar_Height) collectionViewLayout:layout];
     [_emotionCollection registerClass:[HWEmotionCell class] forCellWithReuseIdentifier:@"emotionCell"];
-    _emotionCollection.panGestureRecognizer.allowedTouchTypes = @[];
+    _emotionCollection.scrollEnabled = NO;
     _emotionCollection.delegate = self;
     _emotionCollection.dataSource = self;
-    _emotionCollection.backgroundColor = [UIColor redColor];
     [self addSubview:_emotionCollection];
     
     CGFloat buttonWidth = 40;
@@ -73,7 +71,6 @@
     [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
     [_sendButton addTarget:self action:@selector(sendEmotion:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_sendButton];
-    
 }
 
 - (void)layoutSubviews {
@@ -82,6 +79,7 @@
     self.emotionCollection.frame = CGRectMake(0, 0, kScreen_Width, kKeyboardView_Height - kKeyboardView_ToolBar_Height);
     self.buttonScrollView.frame = CGRectMake(0, kKeyboardView_Height - kKeyboardView_ToolBar_Height, kScreen_Width - buttonWidth, kKeyboardView_ToolBar_Height);
     self.sendButton.frame = CGRectMake(self.buttonScrollView.getX, self.emotionCollection.getY, buttonWidth, kKeyboardView_ToolBar_Height);
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -95,6 +93,8 @@
 }
 
 - (void)selectButton:(UIButton*)clickButton {
+    CGFloat offsetX = clickButton.tag * kScreen_Width;
+    self.emotionCollection.contentOffset = CGPointMake(offsetX, 0);
     
 }
 

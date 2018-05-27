@@ -10,7 +10,7 @@
 #import "PopHeader.h"
 #import "HWEmotionImageCell.h"
 
-@interface HWEmotionCell()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface HWEmotionCell()<UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(nonatomic, strong)UICollectionView* emotionCollection;
 @property(nonatomic, strong)UIPageControl* pageControl;
 @end
@@ -25,11 +25,13 @@
         UICollectionViewFlowLayout* layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         CGFloat height = CGRectGetHeight(self.frame);
-        layout.itemSize = CGSizeMake(kScreen_Width, height - 30);
+        CGFloat width = CGRectGetWidth(self.frame);
+        layout.itemSize = CGSizeMake(width, height - 30);
         layout.minimumInteritemSpacing = 0;
-        _emotionCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, height - 80) collectionViewLayout:layout];
+        layout.minimumLineSpacing = 0;
+        
+        _emotionCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, height - 30) collectionViewLayout:layout];
         _emotionCollection.pagingEnabled = true;
-        _emotionCollection.backgroundColor = [UIColor whiteColor];
         _emotionCollection.delegate = self;
         _emotionCollection.dataSource = self;
         [_emotionCollection registerClass:[HWEmotionImageCell class] forCellWithReuseIdentifier:@"emotion"];
@@ -66,12 +68,19 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"------------------------ %ld",(long)indexPath.row);
     HWEmotionImageCell* emotionImageCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"emotion" forIndexPath:indexPath];
-    emotionImageCell.backgroundColor = [UIColor yellowColor];
     emotionImageCell.emotionArray = [self.emotionArray subarrayWithRange:NSMakeRange(indexPath.row * 20, 20)];
-    NSLog(@"======================== %ld",emotionImageCell.emotionArray.count);
     return emotionImageCell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = CGRectGetHeight(self.frame);
+    CGFloat width = CGRectGetWidth(self.frame);
+    return CGSizeMake(width, height - 30);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
 @end

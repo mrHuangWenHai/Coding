@@ -37,6 +37,10 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.tabBarController.tabBar.hidden = false;
+}
+
 - (void)setupPopHander {
     _popHander = [[HWPopViewHander alloc] init];
     _popHander.projectController = self;

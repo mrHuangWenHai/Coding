@@ -35,7 +35,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"项目首页";
+    self.tabBarController.tabBar.hidden = true;
     [self setTabView];
+    
 }
 
 - (void)setTabView {
@@ -138,8 +140,9 @@
     if (section == 0) {
         return 0;
     }
-    return 10;
+    return 5;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
@@ -157,6 +160,7 @@
         return 4;
     return 2;
 }
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;

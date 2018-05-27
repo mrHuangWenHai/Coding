@@ -53,6 +53,7 @@
 		015F5561207E5EE400B1DB35 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 015F5560207E5EE400B1DB35 /* Tweet.m */; };
 		015F5564207E5F2B00B1DB35 /* HtmlMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 015F5563207E5F2B00B1DB35 /* HtmlMedia.m */; };
 		015F5567207E609F00B1DB35 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 015F5566207E609F00B1DB35 /* Comment.m */; };
+		0168F6FA20B85F0200C972A9 /* HWGitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F6F920B85F0100C972A9 /* HWGitButton.m */; };
 		017702562054B951002F890F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 017702552054B951002F890F /* AppDelegate.m */; };
 		0177025C2054B951002F890F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0177025A2054B951002F890F /* Main.storyboard */; };
 		0177025E2054B951002F890F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0177025D2054B951002F890F /* Assets.xcassets */; };
@@ -203,6 +204,8 @@
 		015F5563207E5F2B00B1DB35 /* HtmlMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HtmlMedia.m; sourceTree = "<group>"; };
 		015F5565207E609F00B1DB35 /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		015F5566207E609F00B1DB35 /* Comment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		0168F6F820B85F0100C972A9 /* HWGitButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWGitButton.h; sourceTree = "<group>"; };
+		0168F6F920B85F0100C972A9 /* HWGitButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWGitButton.m; sourceTree = "<group>"; };
 		017702512054B951002F890F /* Coding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		017702542054B951002F890F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		017702552054B951002F890F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -674,6 +677,8 @@
 				012D8550205D52250065D796 /* HWProjectDescriptionCell.m */,
 				0119C9C9206148DB00D88B5B /* HWMenuButton.h */,
 				0119C9CA206148DB00D88B5B /* HWMenuButton.m */,
+				0168F6F820B85F0100C972A9 /* HWGitButton.h */,
+				0168F6F920B85F0100C972A9 /* HWGitButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1126,6 +1131,7 @@
 				015F5558207E49C500B1DB35 /* HWPopViewCell.m in Sources */,
 				0119FB8220ADEA810048A159 /* HWEmotionModel.m in Sources */,
 				015F555E207E4F4000B1DB35 /* HWLeaveMessageView.m in Sources */,
+				0168F6FA20B85F0200C972A9 /* HWGitButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,16 +20,18 @@
 @property(nonatomic, strong)UIScrollView* scrollView;
 @property(nonatomic, assign)CGFloat keyboardHeight;
 @property(nonatomic, strong)HWEmotionKeyboardView* emotionKeyboard;
+@property(nonatomic, assign)BOOL showEmotion;
+@property(nonatomic, assign)BOOL endEdit;
 @end
 
 @implementation HWMsgInputView
 + (instancetype)messageInputViewWithType:(HWMessageInputViewContentType)type {
     
-    HWMsgInputView* megInputView = [[HWMsgInputView alloc] initWithFrame:CGRectMake(0, kScreen_Height + kMessageInputView_Height, kScreen_Width, kMessageInputView_Height)];
+    HWMsgInputView* megInputView = [[HWMsgInputView alloc] initWithFrame:CGRectMake(0, kScreen_Height, kScreen_Width, kMessageInputView_Height)];
     
     [[NSNotificationCenter defaultCenter] addObserver:megInputView selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:megInputView selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:megInputView selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     return megInputView;
 }
@@ -37,6 +39,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        _showEmotion = false;
         [self loadSubViews];
     }
     return self;
@@ -48,8 +51,8 @@
     self.layer.borderWidth = 0.5;
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
-    _emojiButton = [[UIButton alloc] init];
-    [_emojiButton setImage:[UIImage imageNamed:@"keyboard_emotion"] forState:UIControlStateNormal];
+    _emojiButton = [[UIButton alloc] init];//keyboard_keyboard keyboard_emotion
+    [_emojiButton setImage:[UIImage imageNamed:@"keyboard_keyboard"] forState:UIControlStateNormal];
     [_emojiButton addTarget:self action:@selector(emojiButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_emojiButton];
     
@@ -66,7 +69,25 @@
     _inputView.returnKeyType = UIReturnKeySend;
     _inputView.scrollsToTop = NO;
     [self addSubview:_inputView];
+    
+    UIPanGestureRecognizer* pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
+    [self addGestureRecognizer:pan];
 
+}
+
+- (void)hideKeyBoard {
+    self.endEdit = true;
+    if (!self.showEmotion) {
+        [self.inputView resignFirstResponder];
+    } else {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.frame = CGRectMake(0, kScreen_Height, kScreen_Width, kMessageInputView_Height);
+        } completion:^(BOOL finished) {
+            ((UIViewController*)self.deleage).tabBarController.tabBar.hidden = false;
+            self.endEdit = false;
+            self.showEmotion = false;
+        }];
+    }
 }
 
 - (void)layoutSubviews {
@@ -80,40 +101,76 @@
 }
 
 - (void)emojiButtonClick:(id)sender {
-    [self.inputView resignFirstResponder];
-
+    if (!self.showEmotion) {
+        [self.inputView resignFirstResponder];
+    } else {
+        [self.inputView becomeFirstResponder];
+    }
+    
 }
 
 - (void)keyboardWillShow:(NSNotification*)notification {
+    
     NSDictionary *userInfo = notification.userInfo;
     CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     NSNumber* aValue = userInfo[UIKeyboardAnimationDurationUserInfoKey];
     self.keyboardHeight = endFrame.size.height;
-    [UIView animateWithDuration:aValue.floatValue animations:^{
-        self.frame = CGRectMake(0, kScreen_Height - self.keyboardHeight - CGRectGetHeight(self.frame), kScreen_Width, CGRectGetHeight(self.frame));
-    }];
+    
+    if (!self.showEmotion) {
+        [UIView animateWithDuration:aValue.floatValue animations:^{
+            self.frame = CGRectMake(0, kScreen_Height - self.keyboardHeight - kMessageInputView_Height, kScreen_Width, kMessageInputView_Height);
+        }];
+    } else {
+        self.showEmotion = false;
+        [UIView animateWithDuration:1.9 animations:^{
+            self.emotionKeyboard.frame = CGRectMake(0, kMessageInputView_Height + kKeyboardView_Height, kScreen_Width, kKeyboardView_Height);
+            self.frame = CGRectMake(0, kScreen_Height - self.keyboardHeight - kMessageInputView_Height, kScreen_Width, kMessageInputView_Height);
+        }];
+        
+    }
+
 
 }
 
-- (void)keyboardDidHide:(NSNotification*)notification {
+
+
+- (void)keyboardWillHide:(NSNotification*)notification {
     NSDictionary *userInfo = notification.userInfo;
     CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSNumber* aValue = userInfo[UIKeyboardAnimationDurationUserInfoKey];
+
     
     if (self.emotionKeyboard == NULL) {
-        
         NSArray* imageArray = NULL;
         if ([self.deleage respondsToSelector:@selector(getButtonImageArray)]) {
             imageArray = [self.deleage getButtonImageArray];
         }
         _emotionKeyboard = [[HWEmotionKeyboardView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, kKeyboardView_Height) andImageArray:imageArray];
+        ((UIViewController*)self.deleage).tabBarController.tabBar.hidden = true;
     }
-    ((UIViewController*)self.deleage).tabBarController.tabBar.hidden = true;
-    self.emotionKeyboard.frame = CGRectMake(0, kMessageInputView_Height + kKeyboardView_Height, kScreen_Width, kKeyboardView_Height);
-    [self addSubview:self.emotionKeyboard];
-    [UIView animateWithDuration:0.5 animations:^{
-        self.frame = CGRectMake(0, kScreen_Height - (kMessageInputView_Height + kKeyboardView_Height), kScreen_Width, kMessageInputView_Height + kKeyboardView_Height);
-        self.emotionKeyboard.frame = CGRectMake(0, kMessageInputView_Height, kScreen_Width, kKeyboardView_Height);
-    }];
+    
+    if (!self.emotionKeyboard.superview) {
+        [self addSubview:self.emotionKeyboard];
+        self.emotionKeyboard.frame = CGRectMake(0, kMessageInputView_Height + kKeyboardView_Height, kScreen_Width, kKeyboardView_Height);
+    }
+    
+    if (!self.endEdit) {
+        [UIView animateWithDuration:1.9  animations:^{
+            self.frame = CGRectMake(0, kScreen_Height - (kMessageInputView_Height + kKeyboardView_Height), kScreen_Width, kMessageInputView_Height + kKeyboardView_Height);
+            self.emotionKeyboard.frame = CGRectMake(0, kMessageInputView_Height, kScreen_Width, kKeyboardView_Height);
+        }];
+        [_emojiButton setImage:[UIImage imageNamed:@"keyboard_emotion"] forState:UIControlStateNormal];
+        self.showEmotion = true;
+    } else {
+        [UIView animateWithDuration:aValue.floatValue animations:^{
+            self.frame = CGRectMake(0, kScreen_Height, kScreen_Width, kMessageInputView_Height);
+        } completion:^(BOOL finished) {
+            ((UIViewController*)self.deleage).tabBarController.tabBar.hidden = false;
+            self.endEdit = false;
+            self.showEmotion = false;
+        }];
+    }
+    
 }
 
 - (void)sendWithMessage:(NSString*)message {
@@ -124,6 +181,9 @@
     [self.inputView becomeFirstResponder];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 @end

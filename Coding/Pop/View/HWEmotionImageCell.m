@@ -19,17 +19,18 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+
         UICollectionViewFlowLayout* layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         CGFloat spare = 9;
         CGFloat imageWidth = (kScreen_Width - 16 - 6 * spare) / 7;
         layout.itemSize = CGSizeMake(imageWidth, imageWidth);
         layout.minimumInteritemSpacing = 10;
         layout.minimumLineSpacing = 10;
-        _imageCollection = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
+        _imageCollection = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+        _imageCollection.panGestureRecognizer.allowedTouchTypes = @[];
         _imageCollection.backgroundColor = [UIColor whiteColor];
         [_imageCollection registerNib:[UINib nibWithNibName:@"HWImageCell" bundle:nil] forCellWithReuseIdentifier:@"image"];
-        _imageCollection.collectionViewLayout = layout;
         _imageCollection.delegate = self;
         _imageCollection.dataSource = self;
         [self.contentView addSubview:_imageCollection];
@@ -40,6 +41,10 @@
 - (void)setEmotionArray:(NSArray *)emotionArray {
     _emotionArray = emotionArray;
     [self.imageCollection reloadData];
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
