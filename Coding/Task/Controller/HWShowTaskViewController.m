@@ -29,7 +29,6 @@
     if (self) {
         _status = status;
     }
-    
     return self;
 }
 - (void)viewDidLoad {
@@ -96,7 +95,6 @@
             } else {
                 url = [NSURL URLWithString:[NSString stringWithFormat:@"https://coding.net%@",_task.user.avatar]];
             }
-
             [textCell.textImageView sd_setImageWithURL:url];
         }
         textCell.nameLabel.text = self.titleArray[indexPath.row];

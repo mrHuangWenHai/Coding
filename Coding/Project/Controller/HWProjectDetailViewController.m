@@ -11,10 +11,14 @@
 #import "UIColor+Expanded.h"
 #import "HWProjectDescriptionCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "HWGitView.h"
+#import "HWProjectViewController.h"
 
+#define IS_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 @interface HWProjectDetailViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property(nonatomic, strong)UITableView* detailTableView;
+@property(nonatomic, strong)HWGitView* gitView;
 @property(nonatomic, strong)Project* project;
 @property(nonatomic, strong)NSArray* optionTittleArray;
 @property(nonatomic, strong)NSArray* optionImageArray;
@@ -38,11 +42,15 @@
     self.tabBarController.tabBar.hidden = true;
     [self setTabView];
     
+    HWGitView* gitView = [[HWGitView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 44, CGRectGetWidth(self.view.bounds), 44)];
+    [gitView updateGitWith:self.project];
+    [self.view addSubview: gitView];
+    
 }
 
 - (void)setTabView {
     
-    _detailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64) style:UITableViewStyleGrouped];
+    _detailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 44) style:UITableViewStyleGrouped];
     _detailTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _detailTableView.dataSource = self;
     _detailTableView.delegate = self;
@@ -161,9 +169,17 @@
     return 2;
 }
 
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        HWProjectViewController* projectViewController = [[HWProjectViewController alloc] init];
+        projectViewController.title = self.project.name;
+        projectViewController.project = self.project;
+        [self.navigationController pushViewController:projectViewController animated:true];
+    }
 }
 
 @end

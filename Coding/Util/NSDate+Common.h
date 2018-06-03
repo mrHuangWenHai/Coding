@@ -29,6 +29,8 @@
 
 - (NSString *)stringTimesAgo;//代码更新时间
 
+- (BOOL)isSameDay:(NSDate*)anotherDate;
+
 + (BOOL)isDuringMidAutumn;
 
 @end

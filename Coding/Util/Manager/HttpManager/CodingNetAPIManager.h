@@ -38,4 +38,7 @@
 - (void)requestUnReadTotalNotificationWithBlock:(void(^)(id data, NSError *error))block;
 
 - (void)requestServiceInfoBlock:(void(^)(UserServiceInfo* userServiceInfo, NSError *error))block;
+
+- (void)requestProjectGitMessageWithUrl:(NSString*)url andCallback:(void(^)(id gitMessage, NSError* error))block;
+
 @end

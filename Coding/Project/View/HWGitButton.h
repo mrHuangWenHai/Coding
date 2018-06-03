@@ -15,5 +15,7 @@ typedef NS_ENUM(NSUInteger, GitButtonType) {
 };
 
 @interface HWGitButton : UIView
-
+@property(nonatomic, assign)BOOL check;
+- (instancetype)initWithButtonType:(GitButtonType)buttonType;
+- (void)setContentOfButton:(NSString*)title;
 @end

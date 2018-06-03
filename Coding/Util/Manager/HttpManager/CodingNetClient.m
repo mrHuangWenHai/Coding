@@ -16,6 +16,7 @@
     dispatch_once(&onceToken, ^{
         _sharedClient = [[CodingNetClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://coding.net"]];
         [_sharedClient.requestSerializer setHTTPShouldHandleCookies:true];
+        [_sharedClient.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         
     });
     return _sharedClient;
@@ -26,8 +27,6 @@
                  withMethodType:(NetworkMethod)method
                   autoShowError:(BOOL)autoShowError
                        andBlock:(void(^)(id data, NSError *error)) block {
-    
-
     
     for (NSHTTPCookie *tempC in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]) {
         if ([tempC.name isEqualToString:@"XSRF-TOKEN"]) {

@@ -16,6 +16,7 @@
 #import "Tweet.h"
 #import "MessageModel.h"
 #import "UserServiceInfo.h"
+#import "HWGitModel.h"
 
 @implementation CodingNetAPIManager
 
@@ -201,23 +202,16 @@
     }];
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- (void)requestProjectGitMessageWithUrl:(NSString*)url andCallback:(void(^)(id gitMessage, NSError* error))block {
+    [[CodingNetClient sharedJsonClient] requestJsonDataWithPath:url Params:nil withMethodType:Get autoShowError:true andBlock:^(id data, NSError *error) {
+        if (data) {
+            HWGitModel* gitModel = [HWGitModel mj_objectWithKeyValues:data];
+            block(gitModel, nil);
+        } else {
+            block(nil, error);
+        }
+    }];
+}
 
 
 @end

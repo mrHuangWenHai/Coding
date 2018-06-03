@@ -11,7 +11,7 @@
 @implementation NSDate (Common)
 
 
-- (BOOL)isSameDay:(NSDate*)anotherDate{
+- (BOOL)isSameDay:(NSDate*)anotherDate {
     NSCalendar* calendar = [NSCalendar currentCalendar];
     NSDateComponents* components1 = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self];
     NSDateComponents* components2 = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:anotherDate];
